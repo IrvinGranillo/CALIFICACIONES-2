@@ -23,22 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+<script src="tabs_files/libs/clipboard/clipboard.min.js"></script>
+<script src="tabs_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="tabs_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="tabs_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="tabs_files/libs/quarto-html/popper.min.js"></script>
+<script src="tabs_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="tabs_files/libs/quarto-html/anchor.min.js"></script>
+<link href="tabs_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="tabs_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="tabs_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="tabs_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="tabs_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -68,8 +64,90 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="rendimiento-de-alumnos-por-evaluación" class="level1">
-<h1>Rendimiento de Alumnos por Evaluación</h1>
+<div id="06c0bd77-7361-4941-ac4b-0e19965058bc" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[3]</span><span class="ansi-green-fg">, line 15</span>
+<span class="ansi-green-fg">     11</span> 
+<span class="ansi-green-fg">     12</span> 
+<span class="ansi-green-fg">     13</span> dataframes_procesados = []
+<span class="ansi-green-fg">     14</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> archivo <span style="font-weight:bold;color:rgb(0,135,0)">in</span> archivos_csv:
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">15</span>     dataframes_procesados.append(obtener_calificacion_minima(archivo))
+<span class="ansi-green-fg">     16</span> 
+<span class="ansi-green-fg">     17</span> 
+<span class="ansi-green-fg">     18</span> df_final = reduce(<span style="font-weight:bold;color:rgb(0,135,0)">lambda</span> left, right: pd.merge(left, right, on=[<span class="ansi-yellow-fg">'Apellido(s)'</span>, <span class="ansi-yellow-fg">'Nombre'</span>], how=<span class="ansi-yellow-fg">'outer'</span>), dataframes_procesados)
+
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[2]</span><span class="ansi-green-fg">, line 3</span>, in <span class="ansi-cyan-fg">obtener_calificacion_minima</span><span class="ansi-blue-fg">(ruta_csv)</span>
+<span class="ansi-green-fg">      2</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span> obtener_calificacion_minima(ruta_csv):
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">3</span>     df = pd.read_csv(ruta_csv)
+<span class="ansi-green-fg">      4</span> 
+<span class="ansi-green-fg">      5</span> 
+<span class="ansi-green-fg">      6</span>     df[<span class="ansi-yellow-fg">'Calificación/10.00'</span>] = pd.to_numeric(df[<span class="ansi-yellow-fg">'Calificación/10.00'</span>], errors=<span class="ansi-yellow-fg">'coerce'</span>)
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\Desktop\uv\calificaciones\.venv\Lib\site-packages\pandas\io\parsers\readers.py:873</span>, in <span class="ansi-cyan-fg">read_csv</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, skip_blank_lines, parse_dates, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="ansi-green-fg">    861</span> kwds_defaults = _refine_defaults_read(
+<span class="ansi-green-fg">    862</span>     dialect,
+<span class="ansi-green-fg">    863</span>     delimiter,
+<span class="ansi-green-fg">   (...)</span><span class="ansi-green-fg">    869</span>     dtype_backend=dtype_backend,
+<span class="ansi-green-fg">    870</span> )
+<span class="ansi-green-fg">    871</span> kwds.update(kwds_defaults)
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">873</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-black-fg ansi-yellow-bg">_read</span><span class="ansi-black-fg ansi-yellow-bg">(</span><span class="ansi-black-fg ansi-yellow-bg">filepath_or_buffer</span><span class="ansi-black-fg ansi-yellow-bg">,</span><span class="ansi-black-fg ansi-yellow-bg"> </span><span class="ansi-black-fg ansi-yellow-bg">kwds</span><span class="ansi-black-fg ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\Desktop\uv\calificaciones\.venv\Lib\site-packages\pandas\io\parsers\readers.py:300</span>, in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
+<span class="ansi-green-fg">    297</span> _validate_names(kwds.get(<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">names</span><span class="ansi-yellow-fg">"</span>, <span style="font-weight:bold;color:rgb(0,135,0)">None</span>))
+<span class="ansi-green-fg">    299</span> <span style="font-style:italic;color:rgb(95,135,135)"># Create the parser.</span>
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">300</span> parser = <span class="ansi-black-fg ansi-yellow-bg">TextFileReader</span><span class="ansi-black-fg ansi-yellow-bg">(</span><span class="ansi-black-fg ansi-yellow-bg">filepath_or_buffer</span><span class="ansi-black-fg ansi-yellow-bg">,</span><span class="ansi-black-fg ansi-yellow-bg"> </span><span class="ansi-black-fg ansi-yellow-bg">*</span><span class="ansi-black-fg ansi-yellow-bg">*</span><span class="ansi-black-fg ansi-yellow-bg">kwds</span><span class="ansi-black-fg ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    302</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> chunksize <span style="font-weight:bold;color:rgb(175,0,255)">or</span> iterator:
+<span class="ansi-green-fg">    303</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> parser
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\Desktop\uv\calificaciones\.venv\Lib\site-packages\pandas\io\parsers\readers.py:1645</span>, in <span class="ansi-cyan-fg">TextFileReader.__init__</span><span class="ansi-blue-fg">(self, f, engine, **kwds)</span>
+<span class="ansi-green-fg">   1642</span>     <span style="color:rgb(0,135,0)">self</span>.options[<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">has_index_names</span><span class="ansi-yellow-fg">"</span>] = kwds[<span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">has_index_names</span><span class="ansi-yellow-fg">"</span>]
+<span class="ansi-green-fg">   1644</span> <span style="color:rgb(0,135,0)">self</span>.handles: IOHandles | <span style="font-weight:bold;color:rgb(0,135,0)">None</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
+<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1645</span> <span style="color:rgb(0,135,0)">self</span>._engine = <span class="ansi-black-fg ansi-yellow-bg">self</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">_make_engine</span><span class="ansi-black-fg ansi-yellow-bg">(</span><span class="ansi-black-fg ansi-yellow-bg">f</span><span class="ansi-black-fg ansi-yellow-bg">,</span><span class="ansi-black-fg ansi-yellow-bg"> </span><span class="ansi-black-fg ansi-yellow-bg">self</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">engine</span><span class="ansi-black-fg ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\Desktop\uv\calificaciones\.venv\Lib\site-packages\pandas\io\parsers\readers.py:1904</span>, in <span class="ansi-cyan-fg">TextFileReader._make_engine</span><span class="ansi-blue-fg">(self, f, engine)</span>
+<span class="ansi-green-fg">   1902</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">b</span><span class="ansi-yellow-fg">"</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(175,0,255)">in</span> mode:
+<span class="ansi-green-fg">   1903</span>         mode += <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">b</span><span class="ansi-yellow-fg">"</span>
+<span class="ansi-green-fg">-&gt; </span><span class="ansi-green-fg">1904</span> <span style="color:rgb(0,135,0)">self</span>.handles = <span class="ansi-black-fg ansi-yellow-bg">get_handle</span><span class="ansi-black-fg ansi-yellow-bg">(</span>
+<span class="ansi-green-fg">   1905</span> <span class="ansi-black-fg ansi-yellow-bg">    </span><span class="ansi-black-fg ansi-yellow-bg">f</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1906</span> <span class="ansi-black-fg ansi-yellow-bg">    </span><span class="ansi-black-fg ansi-yellow-bg">mode</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1907</span> <span class="ansi-black-fg ansi-yellow-bg">    </span><span class="ansi-black-fg ansi-yellow-bg">encoding</span><span class="ansi-black-fg ansi-yellow-bg">=</span><span class="ansi-black-fg ansi-yellow-bg">self</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">options</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">get</span><span class="ansi-black-fg ansi-yellow-bg">(</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">encoding</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">,</span><span class="ansi-black-fg ansi-yellow-bg"> </span><span class="ansi-black-fg ansi-yellow-bg ansi-bold">None</span><span class="ansi-black-fg ansi-yellow-bg">)</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1908</span> <span class="ansi-black-fg ansi-yellow-bg">    </span><span class="ansi-black-fg ansi-yellow-bg">compression</span><span class="ansi-black-fg ansi-yellow-bg">=</span><span class="ansi-black-fg ansi-yellow-bg">self</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">options</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">get</span><span class="ansi-black-fg ansi-yellow-bg">(</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">compression</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">,</span><span class="ansi-black-fg ansi-yellow-bg"> </span><span class="ansi-black-fg ansi-yellow-bg ansi-bold">None</span><span class="ansi-black-fg ansi-yellow-bg">)</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1909</span> <span class="ansi-black-fg ansi-yellow-bg">    </span><span class="ansi-black-fg ansi-yellow-bg">memory_map</span><span class="ansi-black-fg ansi-yellow-bg">=</span><span class="ansi-black-fg ansi-yellow-bg">self</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">options</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">get</span><span class="ansi-black-fg ansi-yellow-bg">(</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">memory_map</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">,</span><span class="ansi-black-fg ansi-yellow-bg"> </span><span class="ansi-black-fg ansi-yellow-bg ansi-bold">False</span><span class="ansi-black-fg ansi-yellow-bg">)</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1910</span> <span class="ansi-black-fg ansi-yellow-bg">    </span><span class="ansi-black-fg ansi-yellow-bg">is_text</span><span class="ansi-black-fg ansi-yellow-bg">=</span><span class="ansi-black-fg ansi-yellow-bg">is_text</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1911</span> <span class="ansi-black-fg ansi-yellow-bg">    </span><span class="ansi-black-fg ansi-yellow-bg">errors</span><span class="ansi-black-fg ansi-yellow-bg">=</span><span class="ansi-black-fg ansi-yellow-bg">self</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">options</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">get</span><span class="ansi-black-fg ansi-yellow-bg">(</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">encoding_errors</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">,</span><span class="ansi-black-fg ansi-yellow-bg"> </span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">strict</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">)</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1912</span> <span class="ansi-black-fg ansi-yellow-bg">    </span><span class="ansi-black-fg ansi-yellow-bg">storage_options</span><span class="ansi-black-fg ansi-yellow-bg">=</span><span class="ansi-black-fg ansi-yellow-bg">self</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">options</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">get</span><span class="ansi-black-fg ansi-yellow-bg">(</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">storage_options</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">,</span><span class="ansi-black-fg ansi-yellow-bg"> </span><span class="ansi-black-fg ansi-yellow-bg ansi-bold">None</span><span class="ansi-black-fg ansi-yellow-bg">)</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">   1913</span> <span class="ansi-black-fg ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">   1914</span> <span style="font-weight:bold;color:rgb(0,135,0)">assert</span> <span style="color:rgb(0,135,0)">self</span>.handles <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
+<span class="ansi-green-fg">   1915</span> f = <span style="color:rgb(0,135,0)">self</span>.handles.handle
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~\Desktop\uv\calificaciones\.venv\Lib\site-packages\pandas\io\common.py:930</span>, in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-fg">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="ansi-green-fg">    925</span> <span style="font-weight:bold;color:rgb(0,135,0)">elif</span> <span style="color:rgb(0,135,0)">isinstance</span>(handle, <span style="color:rgb(0,135,0)">str</span>):
+<span class="ansi-green-fg">    926</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Check whether the filename is to be opened in binary mode.</span>
+<span class="ansi-green-fg">    927</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Binary mode does not support 'encoding' and 'newline'.</span>
+<span class="ansi-green-fg">    928</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> ioargs.encoding <span style="font-weight:bold;color:rgb(175,0,255)">and</span> <span class="ansi-yellow-fg">"</span><span class="ansi-yellow-fg">b</span><span class="ansi-yellow-fg">"</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(175,0,255)">in</span> ioargs.mode:
+<span class="ansi-green-fg">    929</span>         <span style="font-style:italic;color:rgb(95,135,135)"># Encoding</span>
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">930</span>         handle = <span class="ansi-black-fg ansi-yellow-bg">open</span><span class="ansi-black-fg ansi-yellow-bg">(</span>
+<span class="ansi-green-fg">    931</span> <span class="ansi-black-fg ansi-yellow-bg">            </span><span class="ansi-black-fg ansi-yellow-bg">handle</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    932</span> <span class="ansi-black-fg ansi-yellow-bg">            </span><span class="ansi-black-fg ansi-yellow-bg">ioargs</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">mode</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    933</span> <span class="ansi-black-fg ansi-yellow-bg">            </span><span class="ansi-black-fg ansi-yellow-bg">encoding</span><span class="ansi-black-fg ansi-yellow-bg">=</span><span class="ansi-black-fg ansi-yellow-bg">ioargs</span><span class="ansi-black-fg ansi-yellow-bg">.</span><span class="ansi-black-fg ansi-yellow-bg">encoding</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    934</span> <span class="ansi-black-fg ansi-yellow-bg">            </span><span class="ansi-black-fg ansi-yellow-bg">errors</span><span class="ansi-black-fg ansi-yellow-bg">=</span><span class="ansi-black-fg ansi-yellow-bg">errors</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    935</span> <span class="ansi-black-fg ansi-yellow-bg">            </span><span class="ansi-black-fg ansi-yellow-bg">newline</span><span class="ansi-black-fg ansi-yellow-bg">=</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">"</span><span class="ansi-black-fg ansi-yellow-bg">,</span>
+<span class="ansi-green-fg">    936</span> <span class="ansi-black-fg ansi-yellow-bg">        </span><span class="ansi-black-fg ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">    937</span>     <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
+<span class="ansi-green-fg">    938</span>         <span style="font-style:italic;color:rgb(95,135,135)"># Binary mode</span>
+<span class="ansi-green-fg">    939</span>         handle = <span style="color:rgb(0,135,0)">open</span>(handle, ioargs.mode)
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: 'data/Derivada y su aproximación.csv'</pre>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Rendimiento de Alumnos por Evaluación</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <section id="esta-es-una-gráfica-de-líneas-paralelas-que-muestra-el-rendimiento-de-los-alumnos-en-distintas-evaluaciones." class="level3">
 <h3 class="anchored" data-anchor-id="esta-es-una-gráfica-de-líneas-paralelas-que-muestra-el-rendimiento-de-los-alumnos-en-distintas-evaluaciones.">Esta es una gráfica de líneas paralelas que muestra el rendimiento de los alumnos en distintas evaluaciones.</h3>
 </section>
@@ -84,18 +162,6 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="malo-desempeño-bajo" class="level2">
 <h2 class="anchored" data-anchor-id="malo-desempeño-bajo">🟥 Malo — desempeño bajo</h2>
-<div id="c931c039-bf5c-4684-9545-8642e4dc3ecc" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Gráfica guardada como 'grafica_rendimiento.html'</code></pre>
-</div>
-</div>
 </section>
 <section id="rendimiento-general-de-los-alumnos" class="level2">
 <h2 class="anchored" data-anchor-id="rendimiento-general-de-los-alumnos">Rendimiento General de los Alumnos</h2>
@@ -107,15 +173,6 @@ Cada barra representa el promedio o desempeño de un estudiante, ordenado de may
 <li>Las <strong>barras naranjas</strong> representan un rendimiento <strong>regular</strong>, con resultados más bajos en comparación con el grupo superior.</li>
 </ul>
 <p>El gráfico permite identificar fácilmente a los alumnos con mejor desempeño y aquellos que podrían requerir apoyo adicional para mejorar sus resultados.</p>
-<div id="74b2ae1d-5518-43a8-8835-e20078047a87" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
 <section id="rendimiento-de-alumnos-por-evaluación-1" class="level2">
 <h2 class="anchored" data-anchor-id="rendimiento-de-alumnos-por-evaluación-1">Rendimiento de Alumnos por Evaluación</h2>
@@ -123,15 +180,6 @@ Cada barra representa el promedio o desempeño de un estudiante, ordenado de may
 Cada línea representa a un estudiante y su calificación sobre una escala de <strong>0 a 10</strong>.</p>
 <p>El gráfico incluye una <strong>leyenda interactiva</strong> que permite <strong>filtrar qué alumnos visualizar</strong>, facilitando el análisis individual o grupal del desempeño.<br>
 De esta forma, se puede observar y comparar cómo varía la calificación de cada alumno en las diferentes evaluaciones.</p>
-<div id="bf0c4fdc-3844-405d-8f32-c45e758f06ec" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
 </section>
 <section id="rendimiento-de-alumnos-por-evaluación-2" class="level2">
 <h2 class="anchored" data-anchor-id="rendimiento-de-alumnos-por-evaluación-2">Rendimiento de Alumnos por Evaluación</h2>
@@ -139,24 +187,10 @@ De esta forma, se puede observar y comparar cómo varía la calificación de cad
 Cada línea representa a un estudiante y su calificación sobre una escala de <strong>0 a 10</strong>.</p>
 <p>El gráfico incluye una <strong>leyenda interactiva</strong> que permite <strong>filtrar qué alumnos visualizar</strong>, facilitando el análisis individual o grupal del desempeño.<br>
 De esta forma, se puede observar y comparar cómo varía la calificación de cada alumno en las diferentes evaluaciones.</p>
-<div id="19a48e31-b6d2-48d5-b2ef-6f6752284c36" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="a47e6fad-ed48-415d-a738-0ef54ae939fc" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"f7485b9fa77d4bc7a265a1e1e37362c8","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-</div>
 </section>
-</section>
+</div>
+</div>
+</div>
 
 </main>
 <!-- /main column -->
